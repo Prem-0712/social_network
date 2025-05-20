@@ -1,0 +1,12 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ request.user.username }}</h1>
+    <a href="{% url 'admin_logout' %}">Logout</a>
+    <p>This is your admin dashboard (statistics will be added later).</p>
+</body>
+</html>

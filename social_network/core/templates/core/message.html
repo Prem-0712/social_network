@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Messages | SocialNet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar (Same as before) -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex-shrink-0">
+          <a href="home.html" class="text-xl font-bold text-blue-600">SocialNet</a>
+        </div>
+        <div class="hidden md:flex items-center w-1/2">
+          <input type="text" placeholder="Search users, posts, or groups..."
+            class="w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+        </div>
+        <div class="hidden md:flex space-x-6 items-center">
+          <a href="home.html" class="text-gray-700 hover:text-blue-600">Home</a>
+          <a href="profile.html" class="text-gray-700 hover:text-blue-600">Profile</a>
+          <a href="friends.html" class="text-gray-700 hover:text-blue-600">Friends</a>
+          <a href="messages.html" class="text-blue-600 font-semibold">Messages</a>
+          <a href="notifications.html" class="text-gray-700 hover:text-blue-600">Notifications</a>
+          <a href="login.html" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Chat Layout -->
+  <div class="max-w-6xl mx-auto mt-6 h-[80vh] bg-white rounded-lg shadow-md flex overflow-hidden">
+
+    <!-- Conversations Sidebar -->
+    <div class="w-1/3 border-r p-4 overflow-y-auto">
+      <h2 class="text-lg font-semibold mb-4">Conversations</h2>
+      <div class="space-y-4">
+        <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded cursor-pointer">
+          <img src="https://via.placeholder.com/40" class="rounded-full" alt="Friend"/>
+          <div>
+            <p class="font-medium">Amit</p>
+            <p class="text-sm text-gray-500 truncate w-48">Hey, are we meeting today?</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded cursor-pointer">
+          <img src="https://via.placeholder.com/40" class="rounded-full" alt="Friend"/>
+          <div>
+            <p class="font-medium">Priya</p>
+            <p class="text-sm text-gray-500 truncate w-48">Let’s plan a weekend trip 🌴</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded cursor-pointer">
+          <img src="https://via.placeholder.com/40" class="rounded-full" alt="Friend"/>
+          <div>
+            <p class="font-medium">Group: Coders Squad</p>
+            <p class="text-sm text-gray-500 truncate w-48">Who's up for a hackathon?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Window -->
+    <div class="flex-1 flex flex-col justify-between">
+      <!-- Header -->
+      <div class="border-b p-4">
+        <h2 class="font-semibold text-lg">Amit</h2>
+        <p class="text-sm text-gray-500">Online</p>
+      </div>
+
+      <!-- Messages -->
+      <div class="flex-1 p-4 overflow-y-auto space-y-4">
+        <div class="flex flex-col items-start">
+          <div class="bg-gray-200 p-2 px-4 rounded-lg max-w-xs">Hey bro, how's your project going?</div>
+        </div>
+        <div class="flex flex-col items-end">
+          <div class="bg-blue-500 text-white p-2 px-4 rounded-lg max-w-xs">Yo! Almost done with the frontend ✌️</div>
+        </div>
+        <div class="flex flex-col items-start">
+          <div class="bg-gray-200 p-2 px-4 rounded-lg max-w-xs">Awesome! Let me know if you need help.</div>
+        </div>
+      </div>
+
+      <!-- Message Input -->
+      <div class="border-t p-4 flex items-center">
+        <input type="text" placeholder="Type your message..." class="w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+        <button class="ml-2 bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">Send</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

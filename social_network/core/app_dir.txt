@@ -1,0 +1,20 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 2C24-B526
+
+ Directory of C:\prem\social_network\social_network\core
+
+20-05-2025  12:53    <DIR>          .
+20-05-2025  12:53    <DIR>          ..
+20-05-2025  11:45                66 admin.py
+20-05-2025  11:45               146 apps.py
+20-05-2025  12:53                 0 app_dir.txt
+20-05-2025  12:13    <DIR>          migrations
+20-05-2025  11:45                60 models.py
+20-05-2025  12:50    <DIR>          templates
+20-05-2025  11:45                63 tests.py
+20-05-2025  12:51               625 urls.py
+20-05-2025  12:49             1,461 views.py
+20-05-2025  11:45                 0 __init__.py
+20-05-2025  12:51    <DIR>          __pycache__
+               8 File(s)          2,421 bytes
+               5 Dir(s)  16,394,616,832 bytes free

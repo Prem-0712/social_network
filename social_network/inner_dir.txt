@@ -1,0 +1,15 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 2C24-B526
+
+ Directory of C:\prem\social_network\social_network
+
+20-05-2025  12:37    <DIR>          .
+20-05-2025  12:37    <DIR>          ..
+20-05-2025  11:45    <DIR>          core
+20-05-2025  11:45           131,072 db.sqlite3
+20-05-2025  12:52                 0 inner_dir.txt
+20-05-2025  11:45               692 manage.py
+20-05-2025  11:45    <DIR>          social_network
+20-05-2025  12:11    <DIR>          theme
+               3 File(s)        131,764 bytes
+               5 Dir(s)  16,394,620,928 bytes free
