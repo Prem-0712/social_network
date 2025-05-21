@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block title %}Edit Profile{% endblock %}
+{% block content %}
+<div class="max-w-2xl mx-auto bg-white p-6 rounded shadow">
+  <h2 class="text-2xl font-bold mb-4">Edit Profile</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label class="block mb-2">Username</label>
+    <input type="text" name="username" class="w-full border p-2 mb-4 rounded">
+
+    <label class="block mb-2">Bio</label>
+    <textarea name="bio" rows="4" class="w-full border p-2 mb-4 rounded"></textarea>
+
+    <label class="block mb-2">Profile Picture</label>
+    <input type="file" name="profile_pic" class="mb-4">
+
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Save Changes</button>
+  </form>
+</div>
+{% endblock %}

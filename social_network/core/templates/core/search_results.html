@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% block title %}Search Results{% endblock %}
+{% block content %}
+<div class="max-w-3xl mx-auto">
+  <h2 class="text-2xl font-bold mb-4">Search Results for "{{ query }}"</h2>
+
+  <div class="space-y-4">
+    {% for result in results %}
+    <div class="bg-white p-4 rounded shadow">
+      <p class="font-semibold">{{ result.username }}</p>
+      <p class="text-gray-600">{{ result.bio }}</p>
+    </div>
+    {% empty %}
+    <p class="text-gray-600">No results found.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

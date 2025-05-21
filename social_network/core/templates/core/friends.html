@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block title %}Friends{% endblock %}
+{% block content %}
+<div class="max-w-4xl mx-auto">
+  <h2 class="text-2xl font-bold mb-4">Your Friends</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    {% for friend in friends %}
+    <div class="bg-white p-4 rounded shadow text-center">
+      <img src="{{ friend.profile_pic.url }}" class="w-20 h-20 rounded-full mx-auto mb-2">
+      <p class="font-semibold">{{ friend.username }}</p>
+    </div>
+    {% empty %}
+    <p class="text-gray-600 col-span-full">You have no friends yet.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
