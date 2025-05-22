@@ -9,24 +9,25 @@
 </head>
 <body class="bg-gray-100">
 
-  <!-- Navbar (reuse from previous code) -->
+  <!-- Navbar -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
         <div class="flex-shrink-0">
-          <a href="home.html" class="text-xl font-bold text-blue-600">SocialNet</a>
+          <a href="{% url 'home' %}" class="text-xl font-bold text-blue-600">SocialNet</a>
         </div>
         <div class="hidden md:flex items-center w-1/2">
-          <input type="text" placeholder="Search users, posts, or groups..."
-            class="w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400" />
+          <form method="GET" action="{% url 'search_results' %}" class="w-full">
+            <input type="text" name="q" placeholder="Search users, posts, or groups..."
+              class="w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400" />
+          </form>
         </div>
         <div class="hidden md:flex space-x-6 items-center">
-          <a href="home.html" class="text-gray-700 hover:text-blue-600">Home</a>
-          <a href="profile.html" class="text-gray-700 hover:text-blue-600">Profile</a>
-          <a href="friends.html" class="text-gray-700 hover:text-blue-600">Friends</a>
-          <a href="messages.html" class="text-gray-700 hover:text-blue-600">Messages</a>
-          <a href="notifications.html" class="text-gray-700 hover:text-blue-600">Notifications</a>
-          <a href="login.html" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Logout</a>
+          <a href="{% url 'home' %}" class="text-gray-700 hover:text-blue-600">Home</a>
+          <a href="{% url 'friends' %}" class="text-gray-700 hover:text-blue-600">Friends</a>
+          <a href="{% url 'messages' %}" class="text-gray-700 hover:text-blue-600">Messages</a>
+          <a href="{% url 'notifications' %}" class="text-gray-700 hover:text-blue-600">Notifications</a>
+          <a href="{% url 'logout' %}" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Logout</a>
         </div>
       </div>
     </div>
@@ -35,31 +36,47 @@
   <!-- Main Layout -->
   <div class="max-w-7xl mx-auto px-4 mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
 
-    <!-- Left: Feed -->
+    <!-- Feed -->
     <div class="md:col-span-2 space-y-6">
-
-      <!-- Banner / Slider -->
+      <!-- Banner -->
       <div class="bg-blue-100 p-6 rounded-lg shadow-md text-center">
         <h2 class="text-2xl font-semibold text-blue-800">Welcome to SocialNet!</h2>
         <p class="text-blue-600">Stay connected with your friends and explore trending topics.</p>
       </div>
 
       <!-- Create Post -->
-      <div class="bg-white p-4 rounded-lg shadow-md">
-        <textarea placeholder="What's on your mind?"
-          class="w-full border rounded-lg p-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
-          rows="3"></textarea>
-        <div class="flex justify-between items-center mt-2">
-          <div class="flex space-x-2 text-blue-600">
-            <label class="cursor-pointer">
-              📷 <input type="file" class="hidden" />
-            </label>
-            <span>Photo</span>
-            <span>🎥 Video</span>
-          </div>
-          <button class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700">Post</button>
-        </div>
+<div class="bg-white p-4 rounded-lg shadow-md">
+  <form method="POST" action="{% url 'create_post' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <textarea
+      name="content"
+      placeholder="What's on your mind?"
+      class="w-full border rounded-lg p-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+      rows="3"
+    ></textarea>
+
+    <div class="flex justify-between items-center mt-2">
+      <div class="flex space-x-4 text-blue-600 items-center">
+        <label class="cursor-pointer flex items-center space-x-1">
+          📷
+          <input type="file" name="image" accept="image/*" class="hidden" />
+          <span>Photo</span>
+        </label>
+
+        <label class="cursor-pointer flex items-center space-x-1">
+          🎥
+          <input type="file" name="video" accept="video/*" class="hidden" />
+          <span>Video</span>
+        </label>
       </div>
+
+      <button type="submit" class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700">
+        Post
+      </button>
+    </div>
+  </form>
+</div>
+
 
       <!-- Sample Post -->
       <div class="bg-white p-4 rounded-lg shadow-md space-y-2">
@@ -81,7 +98,7 @@
 
     </div>
 
-    <!-- Right: Trending Topics -->
+    <!-- Trending Topics -->
     <div class="space-y-4">
       <div class="bg-white p-4 rounded-lg shadow-md">
         <h3 class="text-lg font-semibold mb-2">🔥 Trending Topics</h3>

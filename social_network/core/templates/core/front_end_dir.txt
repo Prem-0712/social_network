@@ -3,16 +3,22 @@
 
  Directory of C:\Prem\social_network\social_network\core\templates\core
 
-05/21/2025  12:30 PM    <DIR>          .
-05/21/2025  12:30 PM    <DIR>          ..
-05/21/2025  12:20 PM               300 dashboard.html
-05/21/2025  12:20 PM             2,318 footer.html
-05/21/2025  12:30 PM                 0 front_end_dir.txt
-05/21/2025  12:20 PM             4,075 home.html
+05/21/2025  12:53 PM    <DIR>          .
+05/21/2025  12:53 PM    <DIR>          ..
+05/21/2025  12:38 PM               537 base.html
+05/21/2025  12:52 PM               618 create_post.html
+05/21/2025  12:44 PM               486 dashboard.html
+05/21/2025  12:51 PM               818 edit_profile.html
+05/21/2025  12:46 PM             2,729 footer.html
+05/21/2025  12:53 PM               632 friends.html
+05/22/2025  12:26 PM                 0 front_end_dir.txt
+05/22/2025  12:04 PM             4,394 home.html
 05/21/2025  12:20 PM               614 login.html
 05/21/2025  12:20 PM             4,351 message.html
 05/21/2025  12:20 PM             3,177 navbar.html
+05/21/2025  12:53 PM               562 notifications.html
 05/21/2025  12:20 PM               347 register.html
+05/21/2025  12:53 PM               561 search_results.html
 05/21/2025  12:20 PM             4,569 user.html
-               9 File(s)         19,751 bytes
-               2 Dir(s)  25,147,441,152 bytes free
+              15 File(s)         24,395 bytes
+               2 Dir(s)  26,771,652,608 bytes free

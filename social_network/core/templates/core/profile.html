@@ -1,0 +1,33 @@
+<!-- Posts Section -->
+<div class="bg-white p-4 rounded-lg shadow-md space-y-4">
+  <h3 class="text-xl font-semibold">Posts</h3>
+
+  {% if posts %}
+    {% for post in posts %}
+      <div class="border-b pb-4">
+        {% if post.content %}
+          <p class="text-gray-800 mb-2">{{ post.content }}</p>
+        {% endif %}
+
+        {% if post.image %}
+          <img src="{{ post.image.url }}" class="rounded-lg mb-2" alt="Post Image" />
+        {% endif %}
+
+        {% if post.video %}
+          <video controls class="rounded-lg mb-2 max-w-full h-auto">
+            <source src="{{ post.video.url }}" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        {% endif %}
+
+        <div class="flex space-x-6 text-gray-600 mt-2">
+          <button>👍 Like</button>
+          <button>💬 Comment</button>
+          <button>↗️ Share</button>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="text-gray-600">You have no posts yet.</p>
+  {% endif %}
+</div>

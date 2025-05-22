@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <div class="container mx-auto mt-10">
+        <h1 class="text-3xl font-bold mb-4">Welcome to Admin Dashboard</h1>
+        <p class="mb-4">Manage users, posts, messages, and more.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white shadow rounded p-4">
+                <h2 class="text-xl font-semibold">Users</h2>
+                <p>View and manage registered users.</p>
+            </div>
+            <div class="bg-white shadow rounded p-4">
+                <h2 class="text-xl font-semibold">Posts</h2>
+                <p>Moderate user posts and content.</p>
+            </div>
+            <div class="bg-white shadow rounded p-4">
+                <h2 class="text-xl font-semibold">Messages</h2>
+                <p>View and monitor user messages.</p>
+            </div>
+        </div>
+        <a href="{% url 'logout' %}" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Logout</a>
+    </div>
+</body>
+</html>
